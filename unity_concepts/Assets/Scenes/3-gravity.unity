@@ -180,7 +180,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 18183c03fdc3911498a9ebcde92f9310, type: 3}
---- !u!1001 &492602177
+--- !u!1001 &337496334
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -189,7 +189,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2887453192498319081, guid: 18183c03fdc3911498a9ebcde92f9310, type: 3}
       propertyPath: m_Name
-      value: Ball
+      value: Ball (5)
       objectReference: {fileID: 0}
     - target: {fileID: 8965979621419329493, guid: 18183c03fdc3911498a9ebcde92f9310, type: 3}
       propertyPath: m_RootOrder
