@@ -1,5 +1,7 @@
 fileFormatVersion: 2
 guid: 63708100d264ed24288d9ddfb4dc733c
+labels:
+- Obstacles
 NativeFormatImporter:
   externalObjects: {}
   mainObjectFileID: 2100000
