@@ -652,7 +652,13 @@ PlayerSettings:
   XboxOneOverrideIdentityPublisher: 
   vrEditorSettings: {}
   cloudServicesEnabled:
+    Build: 0
+    Collab: 0
+    Game Performance: 0
+    Purchasing: 0
+    UDP: 0
     UNet: 1
+    Unity Ads: 0
   luminIcon:
     m_Name: 
     m_ModelFolderPath: 
@@ -667,11 +673,11 @@ PlayerSettings:
   apiCompatibilityLevel: 6
   activeInputHandler: 0
   windowsGamepadBackendHint: 0
-  cloudProjectId: 3232d430-db78-48a9-9d3d-4095451787f0
+  cloudProjectId: a2c0d9f8-2abc-4837-bb62-51363afd0daa
   framebufferDepthMemorylessMode: 0
   qualitySettingsNames: []
-  projectName: 0x02-unity-scripting
-  organizationId: carrie-ybay
+  projectName: Maze
+  organizationId: tammy-junk
   cloudEnabled: 0
   legacyClampBlendShapeWeights: 1
   virtualTexturingSupportEnabled: 0
