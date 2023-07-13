@@ -26,7 +26,7 @@ RenderSettings:
   m_AmbientIntensity: 1
   m_AmbientMode: 0
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
-  m_SkyboxMaterial: {fileID: 10304, guid: 0000000000000000f000000000000000, type: 0}
+  m_SkyboxMaterial: {fileID: 2100000, guid: 617d9be015db68348a623b01ea51a8c5, type: 2}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.12731704, g: 0.13414727, b: 0.121078536, a: 1}
+  m_IndirectSpecularColor: {r: 0.19199547, g: 0.5947936, b: 0.7738039, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -693,6 +693,17 @@ Transform:
   m_Father: {fileID: 1190802975}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1111835107 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6862165288726744778, guid: 8e78589ae5ea25d489ee546fc359e762, type: 3}
+  m_PrefabInstance: {fileID: 6862165289838546729}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1185752678
 GameObject:
   m_ObjectHideFlags: 0
@@ -803,6 +814,7 @@ GameObject:
   - component: {fileID: 1190120087}
   - component: {fileID: 1190120088}
   - component: {fileID: 1190120089}
+  - component: {fileID: 1190120090}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -940,6 +952,19 @@ MonoBehaviour:
   myCamera: {fileID: 1801745641}
   ySpeed: -0.01
   xSpeed: 1
+--- !u!114 &1190120090
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1190120082}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 765c3d8ef868fed479ec8377f1c99860, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TimerText: {fileID: 1111835107}
 --- !u!1 &1190802974
 GameObject:
   m_ObjectHideFlags: 0
