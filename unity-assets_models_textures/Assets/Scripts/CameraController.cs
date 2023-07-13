@@ -4,41 +4,27 @@ using UnityEngine;
 
 public class CameraController : MonoBehaviour
 {
-    //-----Privates variables-----\\
-    private Vector3 offset;
-
-    //-----Publics variables-----\\
-    [Header("Variables")]
-    public Transform player;
-
-    [Space]
-    [Header("Position")]
-    public float camPosX;
-    public float camPosY;
-    public float camPosZ;
-
-    [Space]
-    [Header("Rotation")]
-    public float camRotationX;
-    public float camRotationY;
-    public float camRotationZ;
-
-    [Space]
-    [Range(0f, 10f)]
-    public float turnSpeed;
-
-    //-----Privates functions-----\\
-    private void Start()
+    [SerializeField] Camera myCamera;
+    [SerializeField] float ySpeed = -0.01f, xSpeed = 1;
+    Vector3 Offset, rotOffset;
+    float theta = 0;
+    // Start is called before the first frame update
+    void Start()
     {
-        offset = new Vector3(player.position.x + camPosX, player.position.y + camPosY, player.position.z + camPosZ);
-        transform.rotation = Quaternion.Euler(camRotationX, camRotationY, camRotationZ);
+        if (myCamera == null)
+            myCamera = Camera.main;
+        Offset = myCamera.transform.position - transform.position;
+        rotOffset = myCamera.transform.rotation.eulerAngles - transform.rotation.eulerAngles;
     }
 
-
-    private void LateUpdate()
+    // Update is called once per frame
+    void Update()
     {
-        offset = Quaternion.AngleAxis(Input.GetAxis("Mouse X") * turnSpeed, Vector3.up) * Quaternion.AngleAxis(Input.GetAxis("Mouse Y") * turnSpeed, Vector3.right) * offset;
-        transform.position = player.position + offset;
-        transform.LookAt(player.position);
+        theta += Input.GetAxis("Mouse Y") * ySpeed;
+        theta = Mathf.Clamp(theta, 0, 90f);
+        transform.Rotate(0, Input.GetAxis("Mouse X") * xSpeed, 0);
+        myCamera.transform.position =  (transform.position + (transform.rotation * Quaternion.Euler(theta, 0, 0) * Offset));
+        myCamera.transform.rotation = Quaternion.Euler(transform.rotation.eulerAngles + rotOffset + (Vector3.right * theta));
+        
     }
 }
