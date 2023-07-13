@@ -2,96 +2,81 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(CharacterController))]
 public class PlayerController : MonoBehaviour
 {
-    public float horizontalMove;
-    public float verticalMove;
-    private Vector3 playerInput;
-    public CharacterController player;
+    [SerializeField] Vector3 desiredDirection = Vector2.zero;
 
-    public float playerSpeed;
-    private Vector3 movePlayer;
-    public float gravity = 9.8f;
-    public float fallVelocity;
-    public float jumpForce;
+    [SerializeField] float acceleration = 5.0f, maxSpeed = 5.0f, jumpForce = 5.0f, maxFallSpeed = 4.0f;
+    CharacterController characterController = null;
+    bool JumpDesired = false;
+    Vector3 velocity = Vector3.zero;
+    [SerializeField] Vector3 startPos;
+    [SerializeField] float deathHeight = -10.0f, respawnHeight = 5.0f;
 
-    public Camera mainCamera;
-    private Vector3 camForward;
-    private Vector3 camRight;
+
     // Start is called before the first frame update
     void Start()
     {
-        player = GetComponent<CharacterController>();
-        
+        characterController = GetComponent<CharacterController>();
+        startPos = transform.position;
     }
 
     // Update is called once per frame
     void Update()
     {
-        
-        horizontalMove = Input.GetAxis("Horizontal");
-        verticalMove = Input.GetAxis("Vertical");
-
-        playerInput = new Vector3(horizontalMove, 0, verticalMove);
-        playerInput = Vector3.ClampMagnitude(playerInput, 1);
-
-        CamDirection();
-
-        movePlayer = playerInput.x * camRight + playerInput.z * camForward;
-
-        movePlayer = movePlayer * playerSpeed;
-        player.transform.LookAt(player.transform.position + movePlayer);
-
-        SetGravity();
-
-        PlayerSkills();
-
-        // * playerSpeed *
-        player.Move(movePlayer * Time.deltaTime);
-
-       if (transform.position.y < -40)
-            transform.position = new Vector3(0, 60, 0);
+        GetInput();
     }
 
-    public void CamDirection()
+    // Fixed Update is called once per physics update
+    void FixedUpdate()
     {
-        camForward = mainCamera.transform.forward;
-        camRight = mainCamera.transform.right;
-
-        camForward.y = 0;
-        camRight.y = 0;
-
-        camForward = camForward.normalized;
-        camRight = camRight.normalized;
+        HandleMove();
+        if (IsDead())
+            Respawn();
     }
 
-    public void PlayerSkills()
+    void GetInput()
     {
-        if(player.isGrounded && Input.GetButtonDown("Jump"))
+        desiredDirection = Vector3.zero;
+        desiredDirection.x = Input.GetAxis("Horizontal");
+        desiredDirection.z = Input.GetAxis("Vertical");
+        desiredDirection.Normalize();
+        JumpDesired = JumpDesired || (Input.GetButton("Jump") && characterController.isGrounded);
+    }
+
+    void HandleMove()
+    {
+        Vector3 Delta = (desiredDirection * maxSpeed) - velocity;
+        Delta.y = 0.0f;
+        velocity += Delta * acceleration * Time.deltaTime;
+        velocity.y = Mathf.Clamp(velocity.y, -maxFallSpeed, jumpForce * 2);
+        velocity = Vector3.ClampMagnitude(velocity, maxSpeed);
+        if (JumpDesired && characterController.isGrounded)
         {
-            fallVelocity = jumpForce;
-            movePlayer.y = fallVelocity;
-        }
-    }
-    public void SetGravity()
-    {
-        if(player.isGrounded)
-        {
-            fallVelocity = -gravity * Time.deltaTime;
-            movePlayer.y = fallVelocity;
+            velocity.y = jumpForce;
+            JumpDesired = false;
         }
         else
         {
-            fallVelocity -= gravity * Time.deltaTime;
-            movePlayer.y = fallVelocity;
+            if (!characterController.isGrounded)
+                velocity.y -= acceleration * Time.deltaTime;
+            else
+                velocity.y = 0.0f;
         }
+
+        
+        characterController.Move((transform.rotation * velocity) * Time.deltaTime);
     }
-    
-    // void OnTriggerEnter(Collider other)
-    // {
-    //     if (other.CompareTag("Fall_space"))
-    //     {
-    //         transform.position = new Vector3(0, 5, 0);
-    //     }
-    // }
+
+    bool IsDead()
+    {
+        return transform.position.y < deathHeight;
+    }
+
+    void Respawn()
+    {
+        transform.position = startPos + Vector3.up * respawnHeight;
+        transform.rotation = Quaternion.identity;
+    }
 }
