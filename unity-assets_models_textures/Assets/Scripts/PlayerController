@@ -28,11 +28,10 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //Mueve al jugador
+        
         horizontalMove = Input.GetAxis("Horizontal");
         verticalMove = Input.GetAxis("Vertical");
 
-        // controlar la velocidad de las diagonales
         playerInput = new Vector3(horizontalMove, 0, verticalMove);
         playerInput = Vector3.ClampMagnitude(playerInput, 1);
 
@@ -47,7 +46,7 @@ public class PlayerController : MonoBehaviour
 
         PlayerSkills();
 
-        // * playerSpeed * Time.deltaTime = controla la velocidad del jugador
+        // * playerSpeed *
         player.Move(movePlayer * Time.deltaTime);
 
        if (transform.position.y < -40)
@@ -59,7 +58,6 @@ public class PlayerController : MonoBehaviour
         camForward = mainCamera.transform.forward;
         camRight = mainCamera.transform.right;
 
-        // No necesitamos los ejes Y
         camForward.y = 0;
         camRight.y = 0;
 
