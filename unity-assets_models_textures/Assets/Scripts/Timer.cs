@@ -1,27 +1,46 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
 using UnityEngine.UI;
 
 public class Timer : MonoBehaviour
 {
-    public Text timerText;
-    private float startTime;
+    [SerializeField] Text TimerText;
+    System.DateTime startTime;
+    
     // Start is called before the first frame update
     void Start()
     {
-        startTime = Time.time;
+        
+    }
+
+    void OnEnable()
+    {
+        startTime = System.DateTime.Now;
+
+    }
+
+    void OnDisable()
+    {
+        TimerText.color = Color.green;
+        TimerText.fontSize = 60;
     }
 
     // Update is called once per frame
     void Update()
     {
-        float t = Time.time - startTime;
+        UpdateTimerText();
+    }
 
-        string minutes = ((int) t / 60).ToString();
-        string seconds = ((int) t % 60).ToString("D2");
-        string hundredths = ((int)(t * 100) % 100).ToString("D2");
-
-        timerText.text = $"{minutes}:{seconds}.{hundredths}";
+    void UpdateTimerText()
+    {
+        if( TimerText == null)
+            return;
+        System.TimeSpan timeSpan = System.DateTime.Now - startTime;
+        TimerText.text = timeSpan.ToString("mm':'ss'.'ff");
     }
 }
