@@ -1,13 +1,13 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!21 &-8370326933826480614
+--- !u!21 &-691276677975408304
 Material:
   serializedVersion: 6
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Changa-ExtraBold Atlas Material
+  m_Name: Changa-SemiBold Atlas Material
   m_Shader: {fileID: 4800000, guid: 68e6db2ebdc24f95958faec2be5558d6, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
@@ -32,7 +32,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 9080119678649422961}
+        m_Texture: {fileID: 7223551845051507330}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _OutlineTex:
@@ -113,20 +113,20 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 71c1514a6bd24e1e882cebbe1904ce04, type: 3}
-  m_Name: Changa-ExtraBold
+  m_Name: Changa-SemiBold SDF
   m_EditorClassIdentifier: 
   hashCode: 0
-  material: {fileID: -8370326933826480614}
+  material: {fileID: -691276677975408304}
   materialHashCode: 0
   m_Version: 1.1.0
-  m_SourceFontFileGUID: 690a855ee29db4343b187d8c4483b05f
-  m_SourceFontFile_EditorRef: {fileID: 12800000, guid: 690a855ee29db4343b187d8c4483b05f, type: 3}
-  m_SourceFontFile: {fileID: 12800000, guid: 690a855ee29db4343b187d8c4483b05f, type: 3}
+  m_SourceFontFileGUID: f141366ac943c284382094181c8e1a44
+  m_SourceFontFile_EditorRef: {fileID: 12800000, guid: f141366ac943c284382094181c8e1a44, type: 3}
+  m_SourceFontFile: {fileID: 12800000, guid: f141366ac943c284382094181c8e1a44, type: 3}
   m_AtlasPopulationMode: 1
   m_FaceInfo:
     m_FaceIndex: 0
     m_FamilyName: Changa
-    m_StyleName: ExtraBold
+    m_StyleName: SemiBold
     m_PointSize: 90
     m_Scale: 1
     m_LineHeight: 165.6
@@ -143,11 +143,11 @@ MonoBehaviour:
     m_UnderlineThickness: 4.5
     m_StrikethroughOffset: 18
     m_StrikethroughThickness: 4.5
-    m_TabWidth: 18
+    m_TabWidth: 20
   m_GlyphTable: []
   m_CharacterTable: []
   m_AtlasTextures:
-  - {fileID: 9080119678649422961}
+  - {fileID: 7223551845051507330}
   m_AtlasTextureIndex: 0
   m_IsMultiAtlasTexturesEnabled: 0
   m_ClearDynamicDataOnBuild: 0
@@ -193,7 +193,7 @@ MonoBehaviour:
   m_FallbackFontAssetTable: []
   m_CreationSettings:
     sourceFontFileName: 
-    sourceFontFileGUID: 690a855ee29db4343b187d8c4483b05f
+    sourceFontFileGUID: f141366ac943c284382094181c8e1a44
     pointSizeSamplingMode: 0
     pointSize: 90
     padding: 9
@@ -236,13 +236,13 @@ MonoBehaviour:
   boldSpacing: 7
   italicStyle: 35
   tabSize: 10
---- !u!28 &9080119678649422961
+--- !u!28 &7223551845051507330
 Texture2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Changa-ExtraBold Atlas
+  m_Name: Changa-SemiBold Atlas
   m_ImageContentsHash:
     serializedVersion: 2
     Hash: 00000000000000000000000000000000
