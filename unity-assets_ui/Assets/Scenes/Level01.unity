@@ -3035,6 +3035,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2733667022403509168, guid: 92a9996e7f319f94fae2a8219b7de407, type: 3}
+      propertyPath: m_Name
+      value: Title
+      objectReference: {fileID: 0}
     - target: {fileID: 2733667022483850617, guid: 92a9996e7f319f94fae2a8219b7de407, type: 3}
       propertyPath: m_Name
       value: PauseCanvas
