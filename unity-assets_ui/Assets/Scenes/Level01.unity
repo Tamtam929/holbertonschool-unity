@@ -2293,10 +2293,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: LEVEL SELECT
+  m_text: YOU WIN!
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 36d1d172849312641badae31a0f03ac0, type: 2}
+  m_sharedMaterial: {fileID: -8370326933826480614, guid: 36d1d172849312641badae31a0f03ac0, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -2912,7 +2912,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 8362321051317988368, guid: 66eb7fce51a8f9e4b85b0df9d578825c, type: 3}
       propertyPath: m_Name
-      value: OptionsButton
+      value: MenuButton
       objectReference: {fileID: 0}
     - target: {fileID: 8362321051317988369, guid: 66eb7fce51a8f9e4b85b0df9d578825c, type: 3}
       propertyPath: m_Pivot.x
