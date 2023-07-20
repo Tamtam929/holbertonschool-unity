@@ -3212,6 +3212,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2733667022483850623, guid: 92a9996e7f319f94fae2a8219b7de407, type: 3}
+      propertyPath: m_MatchWidthOrHeight
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2733667022483850623, guid: 92a9996e7f319f94fae2a8219b7de407, type: 3}
       propertyPath: m_ReferenceResolution.x
       value: 1280
       objectReference: {fileID: 0}
