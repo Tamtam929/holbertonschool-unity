@@ -2432,6 +2432,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1370119694}
     m_Modifications:
+    - target: {fileID: 8362321050224881718, guid: 66eb7fce51a8f9e4b85b0df9d578825c, type: 3}
+      propertyPath: m_Name
+      value: BackText
+      objectReference: {fileID: 0}
     - target: {fileID: 8362321050224881720, guid: 66eb7fce51a8f9e4b85b0df9d578825c, type: 3}
       propertyPath: m_text
       value: Back
