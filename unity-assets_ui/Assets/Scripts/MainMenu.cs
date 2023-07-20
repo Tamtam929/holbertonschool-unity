@@ -1,27 +1,31 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
-    public void LevelSelect(int level)
+
+    public void LevelSelect(int targetSceneIndex)
     {
-        SceneManager.LoadScene(level);
+        OptionsMenu.lastScene = SceneManager.GetActiveScene().buildIndex;
+        SceneManager.LoadScene(targetSceneIndex);
     }
 
     public void Options()
     {
-        SceneManager.LoadScene("Options");
-        
+        OptionsMenu.lastScene = SceneManager.GetActiveScene().buildIndex;
+        SceneManager.LoadScene(1);
     }
 
-    public void ExitGame()
+    public void Exit()
     {
-        Debug.Log("Exit Game");
-    #if UNITY_EDITOR
+        Debug.Log("Exited");
+        #if UNITY_EDITOR
         UnityEditor.EditorApplication.isPlaying = false;
-    #else
+        #else
         Application.Quit();
-    #endif
+        #endif
     }
-    
+
 }
