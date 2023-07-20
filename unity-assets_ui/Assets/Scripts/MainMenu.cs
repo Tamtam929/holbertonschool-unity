@@ -3,6 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+public class OptionsMenu : MonoBehaviour
+{
+    // A static variable to store the index of the last scene visited.
+    public static int lastScene;
+    
+    // Add any other variables, methods, and logic specific to the OptionsMenu here.
+}
+
 public class MainMenu : MonoBehaviour
 {
 
