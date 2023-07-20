@@ -3114,6 +3114,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: PauseCanvas
       objectReference: {fileID: 0}
+    - target: {fileID: 2733667022483850617, guid: 92a9996e7f319f94fae2a8219b7de407, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2733667022483850621, guid: 92a9996e7f319f94fae2a8219b7de407, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -3197,6 +3201,14 @@ PrefabInstance:
     - target: {fileID: 2733667022483850621, guid: 92a9996e7f319f94fae2a8219b7de407, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4004717800997386410, guid: 92a9996e7f319f94fae2a8219b7de407, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 175
+      objectReference: {fileID: 0}
+    - target: {fileID: 4004717801431222731, guid: 92a9996e7f319f94fae2a8219b7de407, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -224
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 92a9996e7f319f94fae2a8219b7de407, type: 3}
