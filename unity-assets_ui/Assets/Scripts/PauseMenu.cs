@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.SceneManagement;
@@ -8,8 +9,8 @@ public class PauseMenu : MonoBehaviour
 {
     public UnityEvent<bool> ToggleMenu;
     public UnityEvent<bool> ToggleMenuInverted;
-
     private bool isPaused = false;
+    public GameObject pauseCanvas;
 
     public void OnEnable()
     {
@@ -25,14 +26,14 @@ public class PauseMenu : MonoBehaviour
 
     public void MainMenu()
     {
-        //OptionsMenu.lastScene = 0;
-        SceneManager.LoadScene(0);
+        OptionsMenu.lastScene = 0;
+        SceneManager.LoadScene(3);
     }
 
     public void Options()
     {
-        //OptionsMenu.lastScene = SceneManager.GetActiveScene().buildIndex;
-        SceneManager.LoadScene(1);
+        OptionsMenu.lastScene = SceneManager.GetActiveScene().buildIndex;
+        SceneManager.LoadScene(4);
     }
 
     public void Restart()
@@ -40,37 +41,31 @@ public class PauseMenu : MonoBehaviour
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
-    public void TogglePause()
-    {
-        if (isPaused)
-        {
-            Resume();
-        }
-        else
-        {
-            Pause();
-        }
-    }
-
     public void Pause()
     {
-        Time.timeScale = 0f; // Pause the game by setting the time scale to 0.
+        pauseCanvas.SetActive(true);
+        Time.timeScale = 0f;
         isPaused = true;
-        gameObject.SetActive(true); // Show the PauseMenu canvas.
     }
 
     public void Resume()
     {
-        Time.timeScale = 1f; // Resume the game by setting the time scale back to 1.
+        pauseCanvas.SetActive(false);
+        Time.timeScale = 1f;
         isPaused = false;
-        gameObject.SetActive(false); // Hide the PauseMenu canvas.
-    }
-
-    private void Update()
+    } 
+    void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            TogglePause(); // Toggle pause when the Escape key is pressed.
+            if (isPaused)
+            {
+                Resume();
+            }
+            else
+            {
+                Pause();
+            }
         }
     }
 }
