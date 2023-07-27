@@ -998,7 +998,6 @@ MonoBehaviour:
   myCamera: {fileID: 0}
   ySpeed: -0.01
   xSpeed: 1
-  isInverted: 0
 --- !u!33 &666440256
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -2100,6 +2099,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1332065155272751958, guid: e2e78c3b5849bf142a5f97a119b4424e, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1332065155272751958, guid: e2e78c3b5849bf142a5f97a119b4424e, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1332065155272751958, guid: e2e78c3b5849bf142a5f97a119b4424e, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e2e78c3b5849bf142a5f97a119b4424e, type: 3}
 --- !u!1001 &1588142473
@@ -2331,6 +2342,7 @@ GameObject:
   - component: {fileID: 1801745642}
   - component: {fileID: 1801745641}
   - component: {fileID: 1801745640}
+  - component: {fileID: 1801745643}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: Untagged
@@ -2403,6 +2415,42 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 9, y: 0, z: 0}
+--- !u!114 &1801745643
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1801745639}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e124d65070ddebf43b131b22e5daf875, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ToggleMenu:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1820135912}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  ToggleMenuInverted:
+    m_PersistentCalls:
+      m_Calls: []
+  pauseCanvas: {fileID: 1820135912}
+--- !u!1 &1820135912 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7389774343339813952, guid: 92a9996e7f319f94fae2a8219b7de407, type: 3}
+  m_PrefabInstance: {fileID: 1730609831985792005}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1923315142
 GameObject:
   m_ObjectHideFlags: 0
